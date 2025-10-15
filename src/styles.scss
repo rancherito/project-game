@@ -1,35 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html,
 body {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fafafa;
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      rgba(0, 0, 0, 0.1) 0,
-      rgba(0, 0, 0, 0.1) 1px,
-      transparent 1px,
-      transparent 20px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      rgba(0, 0, 0, 0.1) 0,
-      rgba(0, 0, 0, 0.1) 1px,
-      transparent 1px,
-      transparent 20px
-    );
-  background-size: 40px 40px;
-  color: #111827;
-  position: relative;
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            rgba(0, 0, 0, 0.1) 0,
+            rgba(0, 0, 0, 0.1) 1px,
+            transparent 1px,
+            transparent 20px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(0, 0, 0, 0.1) 0,
+            rgba(0, 0, 0, 0.1) 1px,
+            transparent 1px,
+            transparent 20px
+        );
+    background-size: 40px 40px;
+    color: #111827;
+    position: relative;
 }
