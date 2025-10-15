@@ -50,3 +50,18 @@ You are an expert in TypeScript, Angular, and scalable web application developme
 
 - Flat design ultra simple
 - Only gray, white, black, colors
+
+## General
+
+El juego se llama studyfive
+Este juego es para niños de primaria
+El juego es para que los niños aprendan ingles, matematicas, ciencia y tecnologia, personal social, arte y cultura, comunicacion
+es juego esta adaptado al curriculum nacional de peru
+formato del diseño es vertical (para celulares) maximo 800px de ancho
+
+## Codigo
+
+las variables y funciones deben estar en español
+los nombres de las variables y funciones deben ser cortos y descriptivos y en español
+los comentarios deben estar en español
+las clases css deben estar en español y ser cortas y descriptivas

@@ -21,6 +21,7 @@
         "@angular/router": "^20.3.0",
         "@ng-icons/core": "^32.2.0",
         "@ng-icons/material-icons": "^32.2.0",
+        "@supabase/supabase-js": "^2.75.0",
         "rxjs": "~7.8.0",
         "tslib": "^2.3.0"
     },

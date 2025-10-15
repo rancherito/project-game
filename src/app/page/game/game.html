@@ -1,0 +1,20 @@
+<div class="game-container">
+    <div class="game-header">
+        <h1>Bienvenido al Juego</h1>
+        @if (profile()) {
+            <div class="profile-info">
+                <p>
+                    <strong>{{ profile()!.apodo }}</strong> - Nivel {{ profile()!.nivel }}
+                </p>
+                <p class="rango">Rango: {{ getRangoLabel(profile()!.rango) }}</p>
+                <p>Experiencia: {{ profile()!.experiencia_acumulada }} XP</p>
+            </div>
+        }
+    </div>
+
+    <div class="game-content">
+        <p>Aquí irá el contenido del juego...</p>
+    </div>
+
+    <button class="back-button" (click)="goBack()">Volver al Inicio</button>
+</div>

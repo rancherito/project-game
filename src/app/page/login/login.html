@@ -1,0 +1,14 @@
+<div class="login-container">
+    <div class="login-card">
+        <h1>Bienvenido</h1>
+        <p class="subtitle">Inicia sesión para continuar</p>
+
+        @if (authService.loading()) {
+            <div class="loading">Cargando...</div>
+        } @else {
+            <button class="google-button" (click)="signInWithGoogle()">
+                <span>Continuar con Google</span>
+            </button>
+        }
+    </div>
+</div>

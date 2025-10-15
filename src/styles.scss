@@ -14,21 +14,7 @@ body {
 body {
     font-family: Arial, sans-serif;
     background-color: #fafafa;
-    background-image:
-        repeating-linear-gradient(
-            45deg,
-            rgba(0, 0, 0, 0.1) 0,
-            rgba(0, 0, 0, 0.1) 1px,
-            transparent 1px,
-            transparent 20px
-        ),
-        repeating-linear-gradient(
-            -45deg,
-            rgba(0, 0, 0, 0.1) 0,
-            rgba(0, 0, 0, 0.1) 1px,
-            transparent 1px,
-            transparent 20px
-        );
+    background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 20px);
     background-size: 40px 40px;
     color: #111827;
     position: relative;

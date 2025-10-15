@@ -1,4 +1,10 @@
-<div class="container">
-    <h1>Welcome to the Home Page</h1>
-    <p>This is a simple home page for the game project.</p>
+<div class="header">
+    <h1>Bienvenido, {{ authService.user()?.email }}</h1>
+    <button class="logout-button" (click)="signOut()">Cerrar Sesión</button>
+</div>
+
+<div class="content">
+    <p>Esta es la página principal del proyecto.</p>
+
+    <button class="play-button" (click)="goToGame()">Jugar</button>
 </div>
