@@ -54,7 +54,8 @@ export const gameGuard: CanActivateFn = async () => {
         return false;
     }
 
-    // Cargar el perfil del usuario
+    // Intentar obtener el perfil del caché primero, luego cargar si es necesario
+    // El loadProfile() ya maneja el caché internamente
     const perfil = await profileService.loadProfile();
 
     if (!perfil) {

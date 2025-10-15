@@ -38,11 +38,6 @@ import { ProfileService } from '../../services/profile.service';
                             </select>
                         </div>
 
-                        <div class="grupo-formulario">
-                            <label for="avatar">URL del Avatar (opcional)</label>
-                            <input type="url" id="avatar" [(ngModel)]="datosFormulario.avatar_url" name="avatar" placeholder="https://ejemplo.com/avatar.jpg" />
-                        </div>
-
                         @if (error()) {
                             <div class="mensaje-error">{{ error() }}</div>
                         }
@@ -67,7 +62,7 @@ import { ProfileService } from '../../services/profile.service';
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #000;
+            background: var(--primary);
             color: #fff;
         }
 
@@ -77,7 +72,7 @@ import { ProfileService } from '../../services/profile.service';
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #000;
+            background: var(--primary);
             padding: 2rem;
         }
 
@@ -87,13 +82,13 @@ import { ProfileService } from '../../services/profile.service';
             border-radius: 0;
             max-width: 500px;
             width: 100%;
-            border: 2px solid #000;
+            border: 2px solid var(--primary);
         }
 
         h1 {
             margin: 0 0 0.5rem;
             font-size: 2rem;
-            color: #000;
+            color: var(--primary);
             text-align: center;
             font-weight: 700;
         }
@@ -118,7 +113,7 @@ import { ProfileService } from '../../services/profile.service';
             gap: 0.5rem;
 
             label {
-                color: #000;
+                color: var(--primary);
                 font-weight: 600;
                 font-size: 0.95rem;
             }
@@ -126,7 +121,7 @@ import { ProfileService } from '../../services/profile.service';
             input,
             select {
                 padding: 0.875rem;
-                border: 2px solid #000;
+                border: 2px solid var(--primary);
                 border-radius: 0;
                 font-size: 1rem;
                 background: #fff;
@@ -140,7 +135,7 @@ import { ProfileService } from '../../services/profile.service';
             select {
                 cursor: pointer;
                 appearance: none;
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23000' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2310b981' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
                 background-repeat: no-repeat;
                 background-position: right 1rem center;
                 padding-right: 2.5rem;
@@ -150,8 +145,8 @@ import { ProfileService } from '../../services/profile.service';
         .mensaje-error {
             padding: 1rem;
             background: #fff;
-            color: #000;
-            border: 2px solid #000;
+            color: var(--primary);
+            border: 2px solid var(--primary);
             border-radius: 0;
             font-size: 0.9rem;
             text-align: center;
@@ -161,9 +156,9 @@ import { ProfileService } from '../../services/profile.service';
         .boton-enviar {
             width: 100%;
             padding: 1rem;
-            background: #000;
-            color: #fff;
-            border: 2px solid #000;
+            background: var(--primary);
+            color: var(--color-black);
+            border: 2px solid var(--primary);
             border-radius: 0;
             font-size: 1rem;
             font-weight: 600;
@@ -171,8 +166,8 @@ import { ProfileService } from '../../services/profile.service';
             transition: all 0.2s ease;
 
             &:hover:not(:disabled) {
-                background: #fff;
-                color: #000;
+                background: var(--primary-dark);
+                color: var(--color-white);
             }
 
             &:active:not(:disabled) {
@@ -190,8 +185,8 @@ import { ProfileService } from '../../services/profile.service';
             width: 100%;
             padding: 0.75rem;
             background: #fff;
-            color: #000;
-            border: 2px solid #000;
+            color: var(--primary);
+            border: 2px solid var(--primary);
             border-radius: 0;
             font-size: 0.9rem;
             font-weight: 600;
@@ -199,8 +194,8 @@ import { ProfileService } from '../../services/profile.service';
             transition: all 0.2s ease;
 
             &:hover {
-                background: #000;
-                color: #fff;
+                background: var(--primary);
+                color: var(--color-black);
             }
 
             &:active {

@@ -26,7 +26,7 @@ Eres un asistente experto en el desarrollo de aplicaciones web escalables con **
 ## 🎨 **Guía de Diseño y Estilo Visual**
 
 - **Estética:** Diseño plano (flat design) y ultra minimalista.
-- **Paleta de Colores (REGLA CRÍTICA):** Se prohíbe estrictamente el uso de colores. Solo se deben utilizar **escalas de grises, blanco y negro**.
+- **Paleta de Colores (REGLA CRÍTICA):** Se prohíbe estrictamente colores que no esten en las variables css globales.
 - **Gradientes (REGLA CRÍTICA):** No usar gradientes bajo ninguna circunstancia.
 
 ---

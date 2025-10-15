@@ -16,9 +16,16 @@ export class AuthService {
     constructor() {
         this.supabase = createClient(environment.supabase.url, environment.supabase.anonKey, {
             auth: {
-                autoRefreshToken: true, // Habilita la actualización automática del token
-                persistSession: true, // Mantiene la sesión persistente
-                detectSessionInUrl: true, // Detecta la sesión en la URL después del login OAuth
+                autoRefreshToken: true,
+                persistSession: true,
+                detectSessionInUrl: true,
+                // Desactivar el comportamiento de auto-refresh en cambios de visibilidad
+                flowType: 'pkce',
+            },
+            global: {
+                headers: {
+                    'x-application-name': 'StudyFive',
+                },
             },
         });
 
@@ -37,17 +44,21 @@ export class AuthService {
             this.router.navigate(['/home']);
         }
 
+        // Escuchar cambios de autenticación
+        // Filtrar eventos innecesarios para evitar recargas constantes
         this.supabase.auth.onAuthStateChange((event, session) => {
-            this.user.set(session?.user ?? null);
+            // Solo procesar eventos relevantes
+            if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'USER_UPDATED') {
+                this.user.set(session?.user ?? null);
 
-            console.log(5555);
-
-            // Manejar redirecciones basadas en el estado de autenticación
-            if (event === 'SIGNED_IN' && session?.user) {
-                this.router.navigate(['/home']);
-            } else if (event === 'SIGNED_OUT') {
-                this.router.navigate(['/login']);
+                // Manejar redirecciones basadas en el estado de autenticación
+                if (event === 'SIGNED_IN' && session?.user) {
+                    this.router.navigate(['/home']);
+                } else if (event === 'SIGNED_OUT') {
+                    this.router.navigate(['/login']);
+                }
             }
+            // Ignorar eventos como TOKEN_REFRESHED, INITIAL_SESSION, etc.
         });
     }
 

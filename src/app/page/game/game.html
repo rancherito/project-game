@@ -1,18 +1,72 @@
 <div class="game-container">
     <div class="game-header">
-        <h1>Bienvenido al Juego</h1>
-        @if (profile()) {
-            <div class="profile-info">
-                <p>
-                    <strong>{{ profile()!.apodo }}</strong> - Nivel {{ profile()!.nivel }}
-                </p>
-                <p class="rango">Rango: {{ getRangoLabel(profile()!.rango) }}</p>
+        @if (avatarInfo(); as avatarInfo) {
+            <div class="perfil-informacion">
+                <img [src]="avatarInfo.profile.avatar_url || '/img/avatar-llami-02.png'" alt="Avatar" class="avatar" />
+                <div>
+                    <b>{{ avatarInfo.profile.apodo }}</b>
+                    <p class="rango">{{ getRangoLabel(avatarInfo.profile.rango) }}</p>
+                    <p class="grado">Grado: {{ avatarInfo.profile.grado }}</p>
+                </div>
+            </div>
+            <div class="otra-informacion">
                 <p>Experiencia: {{ profile()!.experiencia_acumulada }} XP</p>
+                <div class="indicador-nivel">
+                    <span [style.width.%]="avatarInfo.porcentajeExp"></span>
+                </div>
             </div>
         }
     </div>
 
     <div class="game-content">
-        <p>Aquí irá el contenido del juego...</p>
+        @if (!cursoSeleccionado()) {
+            <!-- Lista de cursos -->
+            <div class="cursos-grid">
+                @for (curso of cursos; track curso.nombre) {
+                    <div class="curso-card" [style.--curso-color]="curso.color" (click)="seleccionarCurso(curso.nombre)">
+                        <div class="curso-emoji">{{ curso.emoji }}</div>
+                        <h3>{{ curso.nombre }}</h3>
+                        <img [src]="curso.img" alt="{{ curso.nombre }} image" />
+                    </div>
+                }
+            </div>
+        } @else if (!etapaSeleccionada()) {
+            <!-- Etapas del curso seleccionado -->
+            <div class="etapas-container">
+                <button class="btn-volver" (click)="volverACursos()">← Volver a Cursos</button>
+                <h2>{{ cursoSeleccionado() }}</h2>
+                <div class="etapas-grid">
+                    @for (etapa of etapas; track etapa) {
+                        <div class="etapa-card" (click)="seleccionarEtapa(etapa)">
+                            <h4>{{ etapa }}</h4>
+                        </div>
+                    }
+                </div>
+            </div>
+        } @else {
+            <!-- Secciones de la etapa seleccionada -->
+            <div class="secciones-container">
+                <button class="btn-volver" (click)="volverAEtapas()">← Volver a Etapas</button>
+                <h2>{{ cursoSeleccionado() }} - {{ etapaSeleccionada() }}</h2>
+                <div class="secciones-grid">
+                    @for (seccion of [1, 2, 3, 4, 5, 6]; track seccion) {
+                        <div class="seccion-card">
+                            <h5>Sección {{ seccion }}</h5>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+    <div class="game-footer">
+        <Card style="height: 100px">
+            <div class="content-card">
+                <img src="./img/avatar-llami-01.png" alt="" />
+                <div class="info-card">
+                    <b>StudyFive</b>
+                    <div>¡Únete a nosotros en esta emocionante aventura!</div>
+                </div>
+            </div>
+        </Card>
     </div>
 </div>

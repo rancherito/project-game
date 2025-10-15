@@ -1,9 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+    /* Colores principales */
+    --primary: #10b981; /* Verde esmeralda suave y moderno */
+    --primary-dark: #059669; /* Verde más oscuro para hover */
+    --primary-light: #6ee7b7; /* Verde claro para fondos */
+    --text-on-primary: #ffffff; /* Texto blanco sobre primary */
+
+    --secondary: #111827; /* Gris azulado oscuro en lugar de negro puro */
+    --secondary-light: #374151; /* Gris medio para variaciones */
+    --secondary-dark: #1f2937; /* Gris oscuro para fondos */
+    --text-on-secondary: #ffffff; /* Texto blanco sobre secondary */
+
+    /* Colores de estado */
+    --success: #10b981; /* Verde suave (mismo que primary) */
+    --success-dark: #059669; /* Verde más oscuro para hover */
+    --text-on-success: #ffffff; /* Texto blanco sobre success */
+
+    --danger: #ef4444; /* Rojo coral para errores, menos agresivo */
+    --danger-dark: #c62828; /* Rojo más oscuro para hover */
+    --text-on-danger: #ffffff; /* Texto blanco sobre danger */
+
+    --warning: #f59e0b; /* Naranja cálido para advertencias */
+    --warning-dark: #c97300; /* Naranja más oscuro para hover */
+    --text-on-warning: #ffffff; /* Texto blanco sobre warning */
+
+    --info: #3b82f6; /* Azul cielo para información */
+    --info-dark: #2563eb; /* Azul más oscuro para hover */
+    --text-on-info: #ffffff; /* Texto blanco sobre info */
+
+    /* Colores vibrantes para cursos */
+    --pastel-pink: #f06292;
+    --pastel-blue: #4fc3f7;
+    --pastel-green: #81c784;
+    --pastel-yellow: #fff176;
+    --pastel-purple: #ba68c8;
+    --pastel-orange: #ff8a65;
+
+    /* Escala de grises */
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    /* Bordes */
+    --border-width: 2px;
+    --border-radius: 0; /* Sin bordes redondeados (flat design) */
+
+    /* Transiciones */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.2s ease;
+    --transition-slow: 0.3s ease;
+
+    /* Tipografía */
+    --font-family: Arial, sans-serif;
+    --font-size-base: 1rem;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    letter-spacing: 0.5px;
+    line-height: normal;
 }
 
 html,
@@ -13,8 +70,7 @@ body {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #fafafa;
-    background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 20px);
+    background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 20px); /* Patrón más sutil */
     background-size: 40px 40px;
     color: #111827;
     position: relative;
