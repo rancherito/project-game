@@ -14,7 +14,14 @@ export class AuthService {
     private router = inject(Router);
 
     constructor() {
-        this.supabase = createClient(environment.supabase.url, environment.supabase.anonKey);
+        this.supabase = createClient(environment.supabase.url, environment.supabase.anonKey, {
+            auth: {
+                autoRefreshToken: true, // Habilita la actualización automática del token
+                persistSession: true, // Mantiene la sesión persistente
+                detectSessionInUrl: true, // Detecta la sesión en la URL después del login OAuth
+            },
+        });
+
         this.initSession();
     }
 
@@ -32,6 +39,8 @@ export class AuthService {
 
         this.supabase.auth.onAuthStateChange((event, session) => {
             this.user.set(session?.user ?? null);
+
+            console.log(5555);
 
             // Manejar redirecciones basadas en el estado de autenticación
             if (event === 'SIGNED_IN' && session?.user) {

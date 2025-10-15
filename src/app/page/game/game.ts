@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 import { ProfileService } from '../../services/profile.service';
 import { Rango } from '../../models/profile.model';
 
@@ -12,6 +13,7 @@ import { Rango } from '../../models/profile.model';
 })
 export class GameComponent implements OnInit {
     private router = inject(Router);
+    private authService = inject(AuthService);
     profileService = inject(ProfileService);
 
     profile = this.profileService.profile;
@@ -39,7 +41,7 @@ export class GameComponent implements OnInit {
         return labels[rango] || rango;
     }
 
-    goBack() {
-        this.router.navigate(['/home']);
+    cerrarSesion() {
+        this.authService.signOut();
     }
 }

@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
-import { authGuard, loginGuard } from './guards/auth.guard';
-import { profileGuard } from './guards/profile.guard';
+import { authGuard, loginGuard, gameGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     {
@@ -14,14 +13,9 @@ export const routes: Routes = [
         canActivate: [authGuard],
     },
     {
-        path: 'create-profile',
-        loadComponent: () => import('./page/create-profile/create-profile').then((m) => m.CreateProfileComponent),
-        canActivate: [authGuard],
-    },
-    {
         path: 'game',
         loadComponent: () => import('./page/game/game').then((m) => m.GameComponent),
-        canActivate: [profileGuard],
+        canActivate: [gameGuard],
     },
     {
         path: '',
@@ -30,6 +24,6 @@ export const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: 'home',
+        redirectTo: 'login',
     },
 ];
